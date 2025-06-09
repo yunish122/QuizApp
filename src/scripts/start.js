@@ -6,6 +6,6 @@ document.getElementById("menu_id").addEventListener("click", (e) => {
 		window.location.href = "../index.html";
 	}
 	if (btn.id === "diff") {
-		window.location.href = "../difficulty.html";
+		window.location.href = "../htmls/difficulty.html";
 	}
 })
