@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-green-300: oklch(87.1% 0.15 154.449);
     --spacing: 0.25rem;
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
@@ -169,17 +170,11 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
-  .mr-15 {
-    margin-right: calc(var(--spacing) * 15);
-  }
   .mr-15\.5 {
     margin-right: calc(var(--spacing) * 15.5);
   }
   .flex {
     display: flex;
-  }
-  .table {
-    display: table;
   }
   .h-\[100\%\] {
     height: 100%;
@@ -189,9 +184,6 @@
   }
   .min-h-\[550px\] {
     min-height: 550px;
-  }
-  .w-\[70\%\] {
-    width: 70%;
   }
   .w-\[90\%\] {
     width: 90%;
@@ -204,12 +196,6 @@
   }
   .w-full {
     width: 100%;
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -229,18 +215,11 @@
   .gap-5 {
     gap: calc(var(--spacing) * 5);
   }
-  .gap-10 {
-    gap: calc(var(--spacing) * 10);
-  }
   .rounded-\[10px\] {
     border-radius: 10px;
   }
   .rounded-\[40px\] {
     border-radius: 40px;
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .border-2 {
     border-style: var(--tw-border-style);
@@ -251,9 +230,6 @@
   }
   .bg-\[\#D4C9BE\] {
     background-color: #D4C9BE;
-  }
-  .bg-\[\#EEF0EB\] {
-    background-color: #EEF0EB;
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
@@ -266,9 +242,6 @@
   }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
-  }
-  .text-center {
-    text-align: center;
   }
   .text-start {
     text-align: start;
@@ -284,13 +257,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .hover\:cursor-pointer {
     &:hover {
@@ -314,17 +280,11 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }
