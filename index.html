@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
-    <script src="srcipts/script2.js" defer></script>
+    <link href="src/output.css" rel="stylesheet">
 
 </head>
 <body  class="h-full w-full bg-[#06121f]">
     <div id="parent_Container" class="flex justify-center items-center h-[100%] w-[100%] ">
         <div id="start_container" class="p-10 flex justify-center items-center w-[700px] min-h-[550px] bg-[#D4C9BE] rounded-[40px]" >
             <div id="menu_id" class="flex flex-col  items-center gap-10 justify-center mt-10 text-3xl w-full ">
-                <button id="start" class="border-2 w-[70%] bg-[#EEF0EB] text-center rounded-[10px] p-3  hover:cursor-pointer active:bg-[#b5ada389]">Start Game</button>
-                <button id="diff" class="border-2 w-[70%] bg-[#EEF0EB] text-center rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]">Difficulty Level</button>
+                <button id="start" onclick="window.location = 'src/htmls/easy.html'"  class="border-2 w-[70%] bg-[#EEF0EB] text-center rounded-[10px] p-3  hover:cursor-pointer active:bg-[#b5ada389]">Start Game</button>
+                <button id="diff" onclick="window.location = 'src/htmls/difficulty.html'" class="border-2 w-[70%] bg-[#EEF0EB] text-center rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]">Difficulty Level</button>
             </div>
         </div>
     </div>
