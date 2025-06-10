@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="../scripts/hard.js" defer></script>
+    <script src="./../scripts/hard.js" defer></script>
     <link href="../output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,17 +19,65 @@
 
 <body class="h-full w-full bg-[#06121f]">
     <div id="parent_Container" class="flex justify-center items-center h-[100%] w-[100%] ">
-        <div id="question_Container" class="p-10 w-[700px] min-h-[550px] bg-[#D4C9BE] rounded-[40px]" >
-            <h1 id="question_id" class="text-5xl pb-5 pt-5 font-bold">This is the question</h1>
-            <div id="div_id" class="flex flex-col items-start gap-5 justify-center mt-10 text-3xl ">
-                <button id="btn1" class="border-2 w-[90%] text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]">First</button>
-                <button id="btn2" class="border-2 w-[90%] text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]">Second</button>
-                <button id="btn3" class="border-2 w-[90%] text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]">Third</button>
-                <button id="btn4" class="border-2 w-[90%] text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]">Fourth</button>                
+        <div id="question_Container" class="
+        p-7 w-[70%] m-h-[70%] bg-[#D4C9BE] rounded-[40px]
+        
+        
+        " >
+            <h1 id="question_id" class="
+            text-1xl font-bold   
+            sm:text-2xl sm:pb-2 sm:pt-2 sm:font-bold
+            lg:text-3xl
+            ">This is the question</h1>
+            
+            
+            <div id="div_id" class="flex flex-col items-start gap-5 justify-center mt-10 ">
+                <button id="btn1" class="
+                border-2 w-[90%] break-all text-start rounded-[10px] p-2 hover:cursor-pointer active:bg-[#b5ada389]
+                sm:border-2 sm:w-[90%] 
+                md:text-2xl
+                lg:3xl
+                ">First</button>
+                
+                <button id="btn2" class="
+                border-2 w-[90%] break-all text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]
+                sm:border-2 sm:w-[90%]
+                md:text-2xl
+                lg:3xl
+                ">Second</button>
+                <button id="btn3" class="
+                border-2 w-[90%] break-all text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]
+                sm:border-2 sm:w-[90%]
+                md:text-2xl
+                lg:3xl
+                ">Third</button>
+                <button id="btn4" class="
+                border-2 w-[90%] break-all text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]
+                sm:border-2 sm:w-[90%]
+                md:text-2xl
+                lg:3xl
+                ">Fourth</button>                
             </div>
-            <div class="flex justify-between mt-5">
-                <h3 id="score" class=" text-3xl ">Score: <span></span></h3>
-                <h3 id="turn" class="text-3xl mr-15.5">Turn: <span id="turnSpan"></span></h3>
+            <div id="id3" class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-65%]  flex flex-col gap-5 justify-between p-15 items-center w-[100%] h-[100%] bg-[#D4C9BE] border-2 border-black  mt-10 rounded-md">
+                <span id="score" class=" text-black text-2xl ">Your Score is</span>
+                <button id="again" class=" w-[100%] h-[40px] border-1 border-black  rounded-[10px] text-2xl pb-3 text-black bg-[#b5a89889] hover:cursor-pointer active:bg-[#5a5550c6]">Play again</button>                     
+            </div> 
+            <div class="flex justify-between mt-7">
+                <h3 id="score" class=" 
+                text-1xl
+                sm:1xl
+                md:2xl*
+                xl:3xl
+                lg:4xl
+                ">Score: <span></span></h3>
+                <h3 id="turn" class="
+                mr-2
+                text-1xl
+                sm:1xl
+                md:2xl*
+                xl:3xl
+                lg:4xl
+                ">Turn: <span id="turnSpan"></span></h3>
             </div>
 
         </div>

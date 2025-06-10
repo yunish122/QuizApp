@@ -165,6 +165,9 @@ function getRandomIdx(object) {
 
 let prevIdx = -1;
 let usedIndices = []
+turn = 1
+document.getElementById("id1").style.display = 'none';
+
 
 function generateQuestion(obj) {
 
@@ -176,6 +179,8 @@ function generateQuestion(obj) {
 	usedIndices.push(randomInt);
 	return obj[randomInt];
 }
+let currentQuestion = generateQuestion(quizData);
+generate_elements(currentQuestion);
 
 function generate_elements() {
 	currentQuestion = generateQuestion(quizData);
@@ -212,6 +217,7 @@ document.getElementById("div_id").addEventListener("click", (e) => {
 				point = 0;
 				turn = 0;
 				usedIndices = []
+				document.getElementById("id1").style.display = 'block';
 			} else {
 				turn++;
 				generate_elements();
@@ -229,9 +235,7 @@ function reset_color() {
 	document.getElementById("btn3").style.background = '#D4C9BE';
 	document.getElementById("btn4").style.background = '#D4C9BE';
 }
-window.onload = ()=>{
-	turn = 1
-	generate_elements()
-}
+
+
 
 

@@ -175,6 +175,8 @@ function generateQuestion(arr) {
 
 let q = generateQuestion(mediumQuizData);
 show_element(q);
+document.getElementById("id2").style.display = 'none';
+
 function show_element(q){
 
     document.getElementById("question_id").innerText = q.question;
@@ -213,6 +215,8 @@ document.getElementById("div_id").addEventListener("click", (e) => {
 				point = 0;
 				turn = 0
 				usedIndices = []
+        document.getElementById("id2").style.display = 'block';
+
 			}else{
 				q = generateQuestion(mediumQuizData)
 				show_element(q);

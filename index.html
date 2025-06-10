@@ -9,11 +9,29 @@
 </head>
 <body  class="h-full w-full bg-[#06121f]">
     <div id="parent_Container" class="flex justify-center items-center h-[100%] w-[100%] ">
-        <div id="start_container" class="p-10 flex justify-center items-center w-[700px] min-h-[550px] bg-[#D4C9BE] rounded-[40px]" >
-            <h1 class="text-5xl pb-5 pt-5 font-bold text-center">Trivia Game!!!</h1>
-            <div id="menu_id" class="flex flex-col  items-center gap-10 justify-center mt-10 text-3xl w-full ">
-                <button id="start" onclick="window.location = './src/htmls/easy.html'"  class="border-2 w-[70%] bg-[#EEF0EB] text-center rounded-[10px] p-3  hover:cursor-pointer active:bg-[#b5ada389]">Start Game</button>
-                <button id="diff" onclick="window.location = './src/htmls/difficulty.html'" class="border-2 w-[70%] bg-[#EEF0EB] text-center rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]">Difficulty Level</button>
+        <div id="start_container" class="
+        p-2 flex flex-col justify-center items-center w-[250px] h-[350px] bg-[#D4C9BE] rounded-[40px]
+        sm:p-2 sm:flex sm:flex-col sm:justify-center sm:items-center sm:w-sm sm:h-[50%]
+        md:p-4 md:w-[70%] md:h-[60%]
+
+        " >
+            <h1 class="
+            text-2xl pb-3 pt-2 font-bold text-center
+            md:text-4xl md:mb-5
+            xl:text-5xl xl:mb-8 
+            ">Trivia Game!!!</h1>
+            <div id="menu_id" class="flex flex-col  items-center gap-5 justify-center mt-5 text-2xl w-full ">
+                <button id="start" onclick="window.location = './src/htmls/easy.html'"  class="
+               
+                border-2 w-[70%] bg-[#EEF0EB] text-center rounded-[10px] p-3  hover:cursor-pointer active:bg-[#b5ada389]
+                sm:w-[60%] sm:p-2 sm:hover:cursor-pointer sm:active:bg-[#b5ada389]
+                md:w-[70%] md:p-4 md:hover:cursor-pointer md:active:bg-[#b5ada389]                ">Start Game</button>
+                
+                <button id="diff" onclick="window.location = './src/htmls/difficulty.html'" class="
+                border-2 w-[70%] bg-[#EEF0EB] text-center rounded-[10px] p-3  hover:cursor-pointer active:bg-[#b5ada389]
+                sm:w-[60%] sm:p-2 sm:hover:cursor-pointer sm:active:bg-[#b5ada389]
+                md:w-[70%] md:p-4 md:hover:cursor-pointer md:active:bg-[#b5ada389]  
+                ">Difficulty Level</button>
             </div>
         </div>
     </div>

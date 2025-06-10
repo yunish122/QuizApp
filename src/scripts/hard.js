@@ -231,6 +231,7 @@ function show_elements(ques){
 
 let currentQues = generateQuestion(hardQuizData);
 show_elements(currentQues);
+document.getElementById("id3").style.display = 'none';
 
 document.getElementById("div_id").addEventListener('click', (e)=>{
     /**@type {HTMLButtonElement} */
@@ -255,6 +256,8 @@ document.getElementById("div_id").addEventListener('click', (e)=>{
                 point = 0;
                 turn = 0;
                 usedIndices = [];
+                document.getElementById("id2").style.display = 'block';
+
             }else{
 
                 currentQues = generateQuestion(hardQuizData);
