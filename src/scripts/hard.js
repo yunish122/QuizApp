@@ -252,12 +252,15 @@ document.getElementById("div_id").addEventListener('click', (e)=>{
 
         setTimeout(()=>{
             if(turn === 5){
-                document.querySelector('h1').innerText = `Your Score Is ${point}`
+                document.getElementById("score2").innerText = `Your Score Is ${point}`
                 point = 0;
                 turn = 0;
                 usedIndices = [];
-                document.getElementById("id2").style.display = 'block';
-
+                document.getElementById('id3').style.display = "flex";
+                let play_again_div = document.getElementById("again2")
+                play_again_div.addEventListener('click', (e)=>{
+                  window.location = "/index.html";
+                })
             }else{
 
                 currentQues = generateQuestion(hardQuizData);

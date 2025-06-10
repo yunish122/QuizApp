@@ -216,8 +216,17 @@ document.getElementById("div_id").addEventListener("click", (e) => {
 				document.getElementById("score").innerText = `Your Score is ${point}`;
 				point = 0;
 				turn = 0;
-				usedIndices = []
+				usedIndices = [];
+
 				document.getElementById("id1").style.display = 'block';
+
+				let play_again_div = document.getElementById("again");
+				play_again_div.addEventListener('click', (e)=>{
+					window.location = "/index.html";
+				})
+
+				
+
 			} else {
 				turn++;
 				generate_elements();

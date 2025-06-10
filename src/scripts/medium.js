@@ -211,12 +211,19 @@ document.getElementById("div_id").addEventListener("click", (e) => {
 
 		setTimeout(() =>{
 			if(turn == 5){
-				document.querySelector('span').innerText = `Your Score is ${point}!!`;
+				document.getElementById("score1").innerText = `Your Score is ${point}`;
 				point = 0;
 				turn = 0
 				usedIndices = []
-        document.getElementById("id2").style.display = 'block';
+        console.log("adsjfa;dskl")
+				document.getElementById("id2").style.display = 'flex';
 
+				let play_again_div = document.getElementById("again1");
+
+				play_again_div.addEventListener('click', (e)=>{
+					window.location = "/index.html";
+				})
+				
 			}else{
 				q = generateQuestion(mediumQuizData)
 				show_element(q);
