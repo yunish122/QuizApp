@@ -259,7 +259,7 @@ document.getElementById("div_id").addEventListener('click', (e)=>{
                 document.getElementById('id3').style.display = "flex";
                 let play_again_div = document.getElementById("again2")
                 play_again_div.addEventListener('click', (e)=>{
-                  window.location = "/index.html";
+                  window.location = "./index.html";
                 })
             }else{
 
