@@ -148,6 +148,156 @@ const mediumQuizData = [
     question: "Which layer of Earth's atmosphere contains the ozone layer?",
     options: ["Troposphere", "Stratosphere", "Mesosphere", "Thermosphere"],
     answer: "Stratosphere"
+  },
+  {
+    question: "Which instrument measures atmospheric pressure?",
+    options: ["Thermometer", "Altimeter", "Barometer", "Anemometer"],
+    answer: "Barometer"
+  },
+  {
+    question: "Which bird is known for mimicking human speech?",
+    options: ["Sparrow", "Crow", "Parrot", "Dove"],
+    answer: "Parrot"
+  },
+  {
+    question: "How many hearts does an octopus have?",
+    options: ["1", "2", "3", "4"],
+    answer: "3"
+  },
+  {
+    question: "What’s the capital city of Canada?",
+    options: ["Toronto", "Ottawa", "Vancouver", "Montreal"],
+    answer: "Ottawa"
+  },
+  {
+    question: "Which planet rotates on its side, making its rotation unique in the solar system?",
+    options: ["Saturn", "Uranus", "Neptune", "Jupiter"],
+    answer: "Uranus"
+  },
+  {
+    question: "What is the term for a word formed by the initials of a phrase?",
+    options: ["Homonym", "Acronym", "Synonym", "Oxymoron"],
+    answer: "Acronym"
+  },
+  {
+    question: "What gas do plants absorb from the atmosphere during photosynthesis?",
+    options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Methane"],
+    answer: "Carbon Dioxide"
+  },
+  {
+    question: "Which famous ship sank in 1912 on its maiden voyage?",
+    options: ["Britannic", "Queen Mary", "Titanic", "Lusitania"],
+    answer: "Titanic"
+  },
+  {
+    question: "Which sea creature has no brain and no heart?",
+    options: ["Octopus", "Starfish", "Jellyfish", "Sea urchin"],
+    answer: "Jellyfish"
+  },
+  {
+    question: "Which country invented paper?",
+    options: ["India", "Greece", "China", "Egypt"],
+    answer: "China"
+  },
+  {
+    question: "What type of creature is a Komodo dragon?",
+    options: ["Mammal", "Reptile", "Amphibian", "Bird"],
+    answer: "Reptile"
+  },
+  {
+    question: "Which popular board game involves buying properties and collecting rent?",
+    options: ["Scrabble", "Clue", "Monopoly", "Risk"],
+    answer: "Monopoly"
+  },
+  {
+    question: "Which fictional detective lived at 221B Baker Street?",
+    options: ["Hercule Poirot", "Sherlock Holmes", "Miss Marple", "Sam Spade"],
+    answer: "Sherlock Holmes"
+  },
+  {
+    question: "Which metal is liquid at room temperature?",
+    options: ["Iron", "Mercury", "Lead", "Copper"],
+    answer: "Mercury"
+  },
+  {
+    question: "Which vitamin is produced when your skin is exposed to sunlight?",
+    options: ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"],
+    answer: "Vitamin D"
+  },
+  {
+    question: "What is the name of the fairy in Peter Pan?",
+    options: ["Silvermist", "Rosetta", "Tinker Bell", "Periwinkle"],
+    answer: "Tinker Bell"
+  },
+  {
+    question: "Which country gifted the Statue of Liberty to the USA?",
+    options: ["Italy", "Germany", "France", "United Kingdom"],
+    answer: "France"
+  },
+  {
+    question: "What do bees collect and use to make honey?",
+    options: ["Pollen", "Sap", "Nectar", "Water"],
+    answer: "Nectar"
+  },
+  {
+    question: "Which part of the plant conducts photosynthesis?",
+    options: ["Root", "Stem", "Leaf", "Flower"],
+    answer: "Leaf"
+  },
+  {
+    question: "How many players are there on a standard soccer team on the field?",
+    options: ["9", "10", "11", "12"],
+    answer: "11"
+  },
+  {
+    question: "Which is the hardest natural substance on Earth?",
+    options: ["Iron", "Diamond", "Granite", "Quartz"],
+    answer: "Diamond"
+  },
+  {
+    question: "Which is the only continent without reptiles or snakes?",
+    options: ["Antarctica", "Europe", "Asia", "Australia"],
+    answer: "Antarctica"
+  },
+  {
+    question: "What is a baby kangaroo called?",
+    options: ["Calf", "Cub", "Joey", "Kid"],
+    answer: "Joey"
+  },
+  {
+    question: "Which fictional wizard attended Hogwarts School of Witchcraft and Wizardry?",
+    options: ["Gandalf", "Merlin", "Dumbledore", "Harry Potter"],
+    answer: "Harry Potter"
+  },
+  {
+    question: "Which color do you get when you mix red and white?",
+    options: ["Orange", "Pink", "Peach", "Coral"],
+    answer: "Pink"
+  },
+  {
+    question: "What is the main ingredient in guacamole?",
+    options: ["Tomato", "Avocado", "Lettuce", "Cucumber"],
+    answer: "Avocado"
+  },
+  {
+    question: "Which animal is known as the 'Ship of the Desert'?",
+    options: ["Horse", "Camel", "Donkey", "Elephant"],
+    answer: "Camel"
+  },
+  {
+    question: "Which planet is known for its beautiful rings?",
+    options: ["Mars", "Jupiter", "Saturn", "Venus"],
+    answer: "Saturn"
+  },
+  {
+    question: "What is the largest internal organ in the human body?",
+    options: ["Lungs", "Liver", "Kidney", "Stomach"],
+    answer: "Liver"
+  },
+  {
+    question: "Which famous scientist wrote *A Brief History of Time*?",
+    options: ["Carl Sagan", "Neil deGrasse Tyson", "Stephen Hawking", "Richard Feynman"],
+    answer: "Stephen Hawking"
   }
 ];
 
@@ -210,7 +360,7 @@ document.getElementById("div_id").addEventListener("click", (e) => {
 		document.getElementById("turnSpan").innerText = turn;
 
 		setTimeout(() =>{
-			if(turn == 5){
+			if(turn == 10){
 				document.getElementById("score1").innerText = `Your Score is ${point}`;
 				point = 0;
 				turn = 0

@@ -198,7 +198,158 @@ const hardQuizData = [
     question: "Who was the first woman Chief Justice of Nepal?",
     options: ["Sushila Karki", "Sahana Pradhan", "Khil Raj Regmi", "Anuradha Koirala"],
     answer: "Sushila Karki"
+  },
+    {
+    question: "Which traditional Nepali dish consists of spiced lentil soup served with rice and vegetables?",
+    options: ["Sel Roti", "Yomari", "Dal Bhat", "Thukpa"],
+    answer: "Dal Bhat"
+  },
+  {
+    question: "What is the name of the indigenous ethnic group in Nepal known for their mountaineering skills?",
+    options: ["Tamang", "Gurung", "Sherpa", "Magar"],
+    answer: "Sherpa"
+  },
+  {
+    question: "Which is the tallest mountain in Asia that is *not* part of the Himalayas?",
+    options: ["Mount Damavand", "Mount Elbrus", "Mount Ararat", "Klyuchevskaya Sopka"],
+    answer: "Mount Damavand"
+  },
+  {
+    question: "Which Nepali festival celebrates the bond between brothers and sisters and is observed on the last day of Tihar?",
+    options: ["Teej", "Maghe Sankranti", "Bhai Tika", "Janai Purnima"],
+    answer: "Bhai Tika"
+  },
+  {
+    question: "Which religion originated in India and spread across much of Asia, including Nepal?",
+    options: ["Islam", "Buddhism", "Christianity", "Zoroastrianism"],
+    answer: "Buddhism"
+  },
+  {
+    question: "Which region in Nepal is famous for its apple orchards and cold desert-like terrain?",
+    options: ["Jumla", "Rukum", "Mustang", "Taplejung"],
+    answer: "Mustang"
+  },
+  {
+    question: "Which country shares the longest border with Nepal?",
+    options: ["India", "Bhutan", "China", "Bangladesh"],
+    answer: "India"
+  },
+  {
+    question: "What is the name of the ancient palace square in Patan known for its Newar architecture?",
+    options: ["Patan Durbar Square", "Hanuman Dhoka", "Bhaktapur Durbar Square", "Kumari Ghar"],
+    answer: "Patan Durbar Square"
+  },
+  {
+    question: "Which Nepali fermented leafy green vegetable is commonly used in dishes like Gundruk ko jhol?",
+    options: ["Gundruk", "Kinema", "Sukuti", "Yomari"],
+    answer: "Gundruk"
+  },
+  {
+    question: "Which Asian country is known as the 'Land of the Rising Sun'?",
+    options: ["South Korea", "Thailand", "Japan", "Vietnam"],
+    answer: "Japan"
+  },
+  {
+    question: "Which major river originates in the Himalayas and is considered sacred in Hinduism?",
+    options: ["Koshi", "Ganga", "Yamuna", "Karnali"],
+    answer: "Ganga"
+  },
+  {
+    question: "Which ancient trade route passed through Nepal, connecting Tibet with India?",
+    options: ["Silk Road", "Salt Route", "Spice Route", "Tea-Horse Road"],
+    answer: "Salt Route"
+  },
+  {
+    question: "Which city is known as the cultural capital of Nepal?",
+    options: ["Kathmandu", "Pokhara", "Patan", "Bhaktapur"],
+    answer: "Bhaktapur"
+  },
+  {
+    question: "Which mountain in Nepal is considered sacred and is forbidden to be climbed?",
+    options: ["Mount Annapurna", "Mount Kanchenjunga", "Mount Machapuchare", "Mount Dhaulagiri"],
+    answer: "Mount Machapuchare"
+  },
+  {
+    question: "Which is the only South Asian country that was never colonized by a European power?",
+    options: ["Nepal", "Sri Lanka", "Bhutan", "Afghanistan"],
+    answer: "Nepal"
+  },
+   {
+    question: "Which element is a liquid at room temperature along with mercury?",
+    options: ["Bromine", "Chlorine", "Iodine", "Cesium"],
+    answer: "Bromine"
+  },
+  {
+    question: "What is the term for the hypothetical substance once thought to fill all space and carry light waves?",
+    options: ["Plasma", "Ether", "Dark matter", "Quintessence"],
+    answer: "Ether"
+  },
+  {
+    question: "Who developed the general theory of relativity?",
+    options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
+    answer: "Albert Einstein"
+  },
+  {
+    question: "Which ancient civilization developed cuneiform writing?",
+    options: ["Egyptians", "Sumerians", "Persians", "Hittites"],
+    answer: "Sumerians"
+  },
+  {
+    question: "What is the capital of Kazakhstan?",
+    options: ["Almaty", "Astana", "Tashkent", "Bishkek"],
+    answer: "Astana"
+  },
+  {
+    question: "What is the name of the process by which plants lose water vapor through their leaves?",
+    options: ["Photosynthesis", "Respiration", "Transpiration", "Osmosis"],
+    answer: "Transpiration"
+  },
+  {
+    question: "Which part of the human brain is responsible for regulating balance and coordination?",
+    options: ["Cerebrum", "Medulla", "Hypothalamus", "Cerebellum"],
+    answer: "Cerebellum"
+  },
+  {
+    question: "Which book of the Bible is considered the oldest?",
+    options: ["Genesis", "Exodus", "Job", "Psalms"],
+    answer: "Job"
+  },
+  {
+    question: "What is the term for a word that has the same pronunciation but different meanings?",
+    options: ["Homonym", "Synonym", "Antonym", "Palindrome"],
+    answer: "Homonym"
+  },
+  {
+    question: "Which Renaissance artist painted the ceiling of the Sistine Chapel?",
+    options: ["Raphael", "Leonardo da Vinci", "Donatello", "Michelangelo"],
+    answer: "Michelangelo"
+  },
+  {
+    question: "Who was the British Prime Minister during most of World War II?",
+    options: ["Neville Chamberlain", "Winston Churchill", "Clement Attlee", "Anthony Eden"],
+    answer: "Winston Churchill"
+  },
+  {
+    question: "Which field of mathematics is concerned with the study of change and motion?",
+    options: ["Geometry", "Algebra", "Calculus", "Topology"],
+    answer: "Calculus"
+  },
+  {
+    question: "Which molecule carries genetic information in living organisms?",
+    options: ["RNA", "Protein", "DNA", "Enzyme"],
+    answer: "DNA"
+  },
+  {
+    question: "Which planet has the strongest magnetic field?",
+    options: ["Earth", "Jupiter", "Saturn", "Neptune"],
+    answer: "Jupiter"
+  },
+  {
+    question: "Which 20th-century author wrote *One Hundred Years of Solitude*?",
+    options: ["Gabriel García Márquez", "Jorge Luis Borges", "Mario Vargas Llosa", "Isabel Allende"],
+    answer: "Gabriel García Márquez"
   }
+
 ];
 
 function getRandomIdx(arr){
@@ -251,7 +402,7 @@ document.getElementById("div_id").addEventListener('click', (e)=>{
         document.getElementById("turnSpan").innerText=turn;
 
         setTimeout(()=>{
-            if(turn === 5){
+            if(turn === 10){
                 document.getElementById("score2").innerText = `Your Score Is ${point}`
                 point = 0;
                 turn = 0;
@@ -259,7 +410,7 @@ document.getElementById("div_id").addEventListener('click', (e)=>{
                 document.getElementById('id3').style.display = "flex";
                 let play_again_div = document.getElementById("again2")
                 play_again_div.addEventListener('click', (e)=>{
-                  window.location = "./index.html";
+                  window.location = "/index.html";
                 })
             }else{
 

@@ -5,39 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../output.css" rel="stylesheet">
     <script src="../scripts/start.js" defer></script>
+    
     <title>Document</title>
 </head>
-<body class="h-full w-full bg-[#06121f]">
-    <div id="parent_Container" class="flex justify-center items-center h-[100%] w-[100%] ">
-        <div id="question_Container" class="
-        p-7 w-[70%] m-h-[70%] bg-[#D4C9BE] rounded-[40px]
+<body class="bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 w-full h-full">
 
-        " >
-            <h1 id="question_id" class="
-            text-1xl font-bold text-center  
-            sm:text-2xl sm:pb-2 sm:pt-2 sm:font-bold
-            md:text-3xl
-            lg:text-3xl
-            " >Choose Your Difficulty</h1>
-            <div id="div_id" class="flex flex-col items-center gap-5 justify-center mt-5  ">
-                <button onclick="window.location.href = './easy.html'" id="easy" class="
-                border-2 w-[70%] h-[30%] break-all bg-[#EEF0EB] text-center rounded-[10px] p-1  hover:cursor-pointer active:bg-[#b5ada389]
-                sm:w-[60%] sm:p-2 sm:hover:cursor-pointer sm:active:bg-[#b5ada389] sm:text-2xl
-                md:w-[70%] md:p-4 md:hover:cursor-pointer md:active:bg-[#b5ada389] md:text-2xl">Start Game</button>
-                
-                <button onclick="window.location.href = './medium.html'" id="easy" class="
-                border-2 w-[70%] h-[30%] break-all bg-[#EEF0EB] text-center rounded-[10px] p-1  hover:cursor-pointer active:bg-[#b5ada389]
-                sm:w-[60%] sm:p-2 sm:hover:cursor-pointer sm:active:bg-[#b5ada389] sm:text-2xl
-                md:w-[70%] md:p-4 md:hover:cursor-pointer md:active:bg-[#b5ada389] md:text-2xl">Medium</button>
-                <button onclick="window.location.href = './hard.html'" id="easy" class="
-                border-2 w-[70%] h-[30%] break-all bg-[#EEF0EB] text-center rounded-[10px] p-1  hover:cursor-pointer active:bg-[#b5ada389]
-                sm:w-[60%] sm:p-2 sm:hover:cursor-pointer sm:active:bg-[#b5ada389] sm:text-2xl
-                md:w-[70%] md:p-4 md:hover:cursor-pointer md:active:bg-[#b5ada389] md:text-2xl">Hard</button>
-
+    <div id="parent_Container" class="h-full w-full flex items-center justify-center " >
+        <div id="start_container" class="w-[50%] h-[80%] bg-white rounded-[50px] p-10">
+            <div class="flex justify-center items-center flex-col mt-15 gap-10">
+                <div class="w-[130px] h-[130px] rounded-[50%] flex justify-center items-center bg-gradient-to-r from-purple-500 to-pink-500">
+                    <img src="/asset/icons8-brain-24 (2).png" class="w-[70px]">
+                </div>      
+                <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 text-6xl tracking-wider font-extrabold">Quiz Master</h1>
+                <h2 class="text-gray-600 text-3xl font-bold p-0 m-[-25px] tracking-tight">Choose your challenge here</h2>          
             </div>
-    
+
+
+
+            <div id="div_id" class="button-container flex flex-col justify-start items-center gap-8 mt-40 h-full w-full">
+                <!-- easy -->
+                <button onclick="window.location.href = './easy.html'"  class="
+                bg-gradient-to-r from-green-400 to-emerald-600 w-[90%] h-[13%] rounded-3xl p-5
+                transform transition duration-100 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:cursor-pointer
+                flex items-center 
+                ">
+                    <img src="/asset/icons8-baby-bottle-32 (1).png" class="w-[40px] h-[40px] mr-8 ml-5">
+                    <span class="text-4xl font-bold text-white ">Easy</span>
+                    <span class="ml-auto text-[1.3rem] mr-10 bg-emerald-500 px-5 rounded-2xl font-extrabold text-white"> 5 Question</span>
+                </button>
+                <!-- Medium -->
+                <button onclick="window.location.href = './medium.html'" class="
+                bg-gradient-to-r from-yellow-400 to-orange-500 w-[90%] h-[13%] rounded-3xl p-5 flex items-center
+                transform transition duration-100 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:cursor-pointer
+                ">
+                    <img src="/asset/icons8-electricity-24.png" class="w-[40px] h-[40px] mr-8 ml-5">
+                    <span class="text-4xl font-bold text-white ">Medium</span>
+                    <span class="ml-auto text-[1.3rem] mr-10 bg-orange-300 px-5 rounded-2xl font-extrabold text-white">5 Question</span>
+                </button>
+
+                <!-- Hard -->
+                <button onclick="window.location.href = './hard.html'" class="
+                bg-gradient-to-r from-red-400 to-pink-600 w-[90%] h-[13%] flex  rounded-3xl p-5 
+                transform transition duration-100 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:cursor-pointer items-center">
+                    <img src="/asset/icons8-brain-32.png" alt="brain pic" class="w-[40px] h-[40px] mr-8 ml-5">
+                    <span class="text-4xl font-bold text-white ">Hard</span>
+                    <span class="ml-auto text-[1.3rem] mr-10 bg-pink-400 px-5 rounded-2xl font-extrabold text-white">5 Question</span>
+                </button>
+            </div>
         </div>
     </div>
-
 </body>
 </html>
