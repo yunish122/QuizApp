@@ -39,7 +39,7 @@
                 ">Easy</span>
                 <div class="ml-auto flex items-center xl:gap-4 sm:gap-2 md:gap-2 lg:gap-3 gap-1">
                     <img src="../../asset/icons8-clock-24.png">
-                    <p class="text-[0.9rem] sm:text-[1rem] md:text-[1.2rem] xl:text-3xl">10s</p>
+                    <p id="timer" class="text-[0.9rem] sm:text-[1rem] md:text-[1.2rem] xl:text-3xl"></p>
                 </div>
                 <div class="mask-auto items-center flex ml-5 xl:gap-4 sm:gap-2 md:gap-2 lg:gap-3 gap-1">
                     <img src="../../asset/icons8-star-24.png">
@@ -48,20 +48,16 @@
             </div>      
             
             <!-- this is compete bar -->
-            <div class=" w-[95%] items-center 
-            mt-5
-            sm:mb-2 sm:mt-4
-            md:mb-5 md:mt-7
-            lg:mb-7 lg:mt-9">
+            <div class="w-[95%] items-center xl:mb-10 xl:ml-10 sm:mb-5 md:mb-7 lg:mb-8">
                 <div class="flex justify-between w-full items-center mb-2">
-                    <span id="question-counter" class="sm:text-sm lg:text-lg xl:text-xl text-gray-600">Question 1 of 5</span>
-                    <span id="progress-percent" class="sm:text-sm lg:text-lg xl:text-x text-gray-600">20% Complete</span>
+                    <span id="question-counter" class="sm:text-sm lg:text-lg xl:text-xl text-gray-600">Question 0 of 5</span>
+                    <span id="progress-percent" class="sm:text-sm lg:text-lg xl:text-xl text-gray-600">0% Complete</span>
                 </div>
                 <!-- Progress Bar Container -->
-                <div class="h-2 sm:h-1 lg:h-2 w-full rounded-[50px] bg-gray-300">
+                <div class="h-2 w-full rounded-[50px] bg-gray-300 overflow-hidden">
                     <div id="progress-bar" 
-                        class="h-full w-full rounded-[50px] bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 ease-out" 
-                        style="width: 20%">
+                        class="h-full rounded-[50px] bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 ease-out" 
+                        style="width: 0%">
                     </div>
                 </div>
             </div>
@@ -130,13 +126,9 @@
                 hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
                 ">Fourth</button>
 
-                <div id="id1" class="overlay-box">
-                    <span id="score" class="score-text">Your Score is</span>
-                    <button id="again" class="play-again-btn">Play again</button>
-                </div>
                 <div class="w-full sm:h-1 lg:h-2 xl:h-2 h-1 mt-5 relative bg-gray-400 rounded-4xl
                 sm:mt-5 ">
-                    <div class="w-[4%] h-full rounded-3xl bg-gradient-to-r from-blue-500 to-purple-500 transform transition"></div>
+                    <div id="timer-countdown" class="w-[4%] h-full rounded-3xl bg-gradient-to-r from-blue-500 to-purple-500 transform transition"></div>
                 </div>
 
             </div>

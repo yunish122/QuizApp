@@ -1,83 +1,146 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full w-full">
+<html lang="en" class="h-screen w-screen">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./../scripts/medium.js" defer></script>
-    <link href="../output.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kanchenjunga:wght@400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        *{
-            font-family: "Rowdies", sans-serif;
-
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./../scripts/medium.js" defer></script>
+  <link href="../output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kanchenjunga:wght@400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: "Rowdies", sans-serif;
+    }
+  </style>
 </head>
 
-<body class="h-full w-full bg-[#06121f]">
-    <div id="parent_Container" class="flex justify-center items-center h-[100%] w-[100%] ">
-        <div id="question_Container" class="
-        p-7 w-[70%] m-h-[70%] bg-[#D4C9BE] rounded-[40px]  
-        lg:w-[40%] 
-        " >
-            <h1 id="question_id" class="
-            text-1xl font-bold   
-            sm:text-2xl sm:pb-2 sm:pt-2 sm:font-bold
-            lg:text-3xl
-            ">This is the question</h1>
+<body class="bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 w-full h-full">
+
+    <div id="parent_Container" class="h-full min-w-[80%] flex items-center justify-center " >
+        <div id="question_Container" class="question-box w-[80%] h-[75%] bg-white/95 rounded-[50px] p-5
+        sm:p-8
+        md:h-[90%]
+        xl:h-[100%]
+        
+        ">
+            <!-- this contains "easy", time and star -->
+            <div class="w-[95%] flex items-center xl:mb-10 
+            sm:mb-2 
+            md:mb-5 md:mt-5
+            lg:mb-7 lg:mt-5
+            ">
+
+                <span class="flex items-center justify-center xl:w-25 rounded-2xl xl:rounded-3xl text-green-700 bg-green-100 h-5
+                sm:w-12 sm:text-[1rem] sm:h-7 
+                md:text-[1.2rem] md:w-14 md:h-8
+                text-[0.8rem] w-12 
+                ">Easy</span>
+                <div class="ml-auto flex items-center xl:gap-4 sm:gap-2 md:gap-2 lg:gap-3 gap-1">
+                    <img src="../../asset/icons8-clock-24.png">
+                    <p class="text-[0.9rem] sm:text-[1rem] md:text-[1.2rem] xl:text-3xl">10s</p>
+                </div>
+                <div class="mask-auto items-center flex ml-5 xl:gap-4 sm:gap-2 md:gap-2 lg:gap-3 gap-1">
+                    <img src="../../asset/icons8-star-24.png">
+                    <p id="timer" class="text-[0.9rem] sm:text-[1rem] md:text-[1.2rem] xl:text-3xl">25s</p>
+                </div>
+            </div>      
             
+            <!-- this is compete bar -->
+            <div class=" w-[95%] items-center 
+            mt-5
+            sm:mb-2 sm:mt-4
+            md:mb-5 md:mt-7
+            lg:mb-7 lg:mt-9">
+                <div class="flex justify-between w-full items-center mb-2">
+                    <span id="question-counter" class="sm:text-sm lg:text-lg xl:text-xl text-gray-600">Question 0 of 5</span>
+                    <span id="progress-percent" class="sm:text-sm lg:text-lg xl:text-x text-gray-600"></span>
+                </div>
+                <!-- Progress Bar Container -->
+                <div class="h-2 w-full rounded-[50px] bg-gray-300">
+                    <div id="progress-bar" 
+                        class="h-full rounded-[50px] bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 ease-out" 
+                        style="width: 0%">
+                    </div>
+                </div>
+            </div>
+
+            <!-- this is the option box -->
+            <div id="div_id" class="button-group flex w-[95%] flex-col items-start xl:mt-5 h-full xl:gap-5 sm:gap-4 gap-3
+            xl:mb-5
+            mt-5
             
-            <div id="div_id" class="relative flex flex-col items-start gap-5 justify-center mt-10 ">
-                <button id="btn1" class="
-                border-2 w-[90%] break-all text-start rounded-[10px] p-2 hover:cursor-pointer active:bg-[#b5ada389]
-                sm:border-2 sm:w-[90%] 
-                md:text-2xl
-                lg:3xl
-                ">First</button>
+            ">
+
+                <h1 id="question_id" class="question-text tracking-wide font-extrabold
+                sm:text-2xl sm:h-20 sm:mt-5
+                lg:text-[1.8rem] lg:h-20
+                xl:text-[2rem] xl:h-25
+                text-[1.4rem] h-25 mt-2
+                ">This is the question</h1>
                 
-                <button id="btn2" class="
-                border-2 w-[90%] break-all text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]
-                sm:border-2 sm:w-[90%]
-                md:text-2xl
-                lg:3xl
+                <button id="btn1" class="option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
+                sm:text-xl sm:pl-4
+                sm:h-[11%]
+                md:text-md
+                md:h-[11%]
+                
+                h-[10%] text-[1.2rem] pl-3
+                xl:text-4xl xl:h-[10%] 
+                hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
+                
+                
+                ">
+                    <span class="w-[50px]">A</span>
+                </button>
+                
+                <button id="btn2" class="option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
+                sm:text-xl sm:pl-4
+                sm:h-[11%]
+                md:text-md
+                md:h-[11%]
+                h-[10%] text-[1.2rem] pl-3
+                
+                xl:text-4xl xl:h-[10%] 
+                hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
                 ">Second</button>
-                <button id="btn3" class="
-                border-2 w-[90%] break-all text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]
-                sm:border-2 sm:w-[90%]
-                md:text-2xl
-                lg:3xl
+                
+                <button id="btn3" class="option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
+                sm:text-xl sm:pl-4
+                sm:h-[11%]
+                md:text-md
+                md:h-[11%]
+                
+                h-[10%] text-[1.2rem] pl-3
+
+                xl:text-4xl xl:h-[10%] 
+                hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
                 ">Third</button>
-                <button id="btn4" class="
-                border-2 w-[90%] break-all text-start rounded-[10px] p-3 hover:cursor-pointer active:bg-[#b5ada389]
-                sm:border-2 sm:w-[90%]
-                md:text-2xl
-                lg:3xl
-                ">Fourth</button>                
-            </div>
-            <div id="id2" class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-55%]  flex flex-col gap-5 justify-between p-15 items-center w-[67%] h-[25%] bg-[#D4C9BE] border-2 border-black  mt-10 rounded-md">
-                <span id="score1" class=" text-black text-2xl ">Your Score is</span>
-                <button id="again1" class=" w-[100%] h-[40px] border-1 border-black  rounded-[10px] text-2xl pb-3 text-black bg-[#b5a89889] hover:cursor-pointer active:bg-[#5a5550c6]">Play again</button>                     
-            </div>   
-            <div class="flex justify-between mt-7">
-                <h3 id="score" class=" 
+                
+                <button id="btn4" class="option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
+                sm:text-xl sm:pl-4
+                sm:h-[11%]
+                md:text-md
+                md:h-[11%]
+                h-[10%] text-[1.2rem] pl-3
 
-                    sm:text-2xl
-                    md:text-2xl
-                    lg:text-3xl               
-                ">Score: <span></span></h3>
-                <h3 id="turn" class="
-                    mr-25
-                    sm:text-2xl
-                    md:text-2xl
-                    lg:text-3xl
-                ">Turn: <span id="turnSpan"></span></h3>
+                
+                xl:text-4xl xl:h-[10%] 
+                hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
+                ">Fourth</button>
+
+
+                <div class="w-full sm:h-1 lg:h-2 xl:h-2 h-1 mt-5 relative bg-gray-400 rounded-4xl
+                sm:mt-5 ">
+                    <div id="timer-countdown" class="h-full w-full rounded-3xl bg-gradient-to-r from-blue-500 to-purple-500 transform transition"></div>
+                </div>
+
             </div>
 
-        </div>
+        </div>    
+
     </div>
-
+ 
 </body>
 </html>

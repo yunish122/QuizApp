@@ -310,7 +310,10 @@ function getRandomIdx(arr){
 let usedIndices = []
 let point = 0;
 let turn = 0;
-
+let question_counter = 0;
+let timer = 100;
+let timer_show_garna = 25; 
+let game_win = false;
 function generateQuestion(arr) {
 
 	let randomInt;
@@ -325,7 +328,6 @@ function generateQuestion(arr) {
 
 let q = generateQuestion(mediumQuizData);
 show_element(q);
-document.getElementById("id2").style.display = 'none';
 
 function show_element(q){
 
@@ -336,6 +338,18 @@ function show_element(q){
     document.getElementById("btn4").innerText = q.options[3];
 	
 }
+function setCountDown(){
+  setInterval(()=>{
+    timer -= 4;
+    timer_show_garna--;
+    document.getElementById("timer-countdown").style.width = `${timer}%`
+    document.getElementById("timer").innerText = `${timer_show_garna}s`
+  },1000)
+}
+setCountDown()
+
+
+
 
 
 document.getElementById("div_id").addEventListener("click", (e) => {
@@ -345,48 +359,91 @@ document.getElementById("div_id").addEventListener("click", (e) => {
     if(["btn1", "btn2", "btn3", "btn4"].includes(btn.id)) {
 		/**@type {HTMLObjectElement} */
 		
-        if(btn.innerText === q.answer){
-			console.log("milyo")
-			btn.style.background = "#708238";
-			point++
+      	if(btn.innerText === q.answer){
+			btn.style.background =  "#DCFCE7";
+			btn.style.borderColor = "#4ADE80";
+			point++;
 		}else{
-			console.log("milena")
-			btn.style.background = "#A84448";
-			
+			btn.style.background = "#FEE2E2";
+			btn.style.borderColor = "#F87171";
 		}
-		turn++;
+    turn += 20;
+    question_counter++;
+    document.getElementById("progress-bar").style.width = `${turn}%`;
+    document.getElementById("progress-percent").innerText = `${turn}% Complete`;
+    document.getElementById("question-counter").innerText = `Question ${question_counter}/5`;
 
-		document.querySelector('span').innerText = point;
-		document.getElementById("turnSpan").innerText = turn;
+    
+    win_loss()
 
-		setTimeout(() =>{
-			if(turn == 10){
-				document.getElementById("score1").innerText = `Your Score is ${point}`;
-				point = 0;
-				turn = 0
-				usedIndices = []
-        console.log("adsjfa;dskl")
-				document.getElementById("id2").style.display = 'flex';
-
-				let play_again_div = document.getElementById("again1");
-
-				play_again_div.addEventListener('click', (e)=>{
-					window.location = "/index.html";
-				})
-				
-			}else{
-				q = generateQuestion(mediumQuizData)
-				show_element(q);
-				reset_color();
-			}
-		},500);
 
     }
 })
 
-function reset_color() {
-	document.getElementById("btn1").style.background = '#D4C9BE';
-	document.getElementById("btn2").style.background = '#D4C9BE';
-	document.getElementById("btn3").style.background = '#D4C9BE';
-	document.getElementById("btn4").style.background = '#D4C9BE';
+function win_loss(){
+  setTimeout(()=>{
+	console.log("we are inside set Time out")
+
+		if(point === 5){
+			game_win = true;
+			console.log("point 5")
+			localSet()
+			reset_game()
+			return;
+		}
+		if(timer_show_garna < 0){
+			game_win = false;
+			localSet()
+			reset_game()
+			console.log("time sako")
+			return
+		}if(turn === 100){
+			localSet()
+			reset_game()
+			console.log('haryo 5 turn sako')
+			return
+	
+		}
+
+		q = generateQuestion(mediumQuizData);
+		show_element(q);
+		reset_color()
+
+	
+  	
+	},1000)
 }
+
+function localSet(){
+	localStorage.setItem("points", point);
+}
+
+
+function reset_game(){
+	usedIndices = [];
+	point = 0;
+	turn = 0;
+	question_counter = 0;
+	timer = 100;
+	timer_show_garna = 25; 
+	game_win = false;
+	window.location.href = "./../htmls/result.html"
+}
+
+
+
+function reset_color() {
+	document.getElementById("btn1").style.background = "#ffffff";
+  document.getElementById("btn1").style.borderColor = "#D1D5DB";
+
+	document.getElementById("btn2").style.background = "#ffffff";
+  document.getElementById("btn2").style.borderColor = "#D1D5DB";
+
+	document.getElementById("btn3").style.background = "#ffffff";
+  document.getElementById("btn3").style.borderColor = "#D1D5DB";
+
+	document.getElementById("btn4").style.background = "#ffffff";
+  document.getElementById("btn4").style.borderColor = "#D1D5DB";
+
+}
+

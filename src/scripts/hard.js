@@ -353,79 +353,146 @@ const hardQuizData = [
 ];
 
 function getRandomIdx(arr){
-    return Math.floor(Math.random() * arr.length)
+    let size = arr.length;
+    let randomIdx = Math.floor(Math.random() * size);
+    return randomIdx;
 }
+let usedIndices = []
 let point = 0;
 let turn = 0;
+let question_counter = 0;
+let timer = 100;
+let timer_show_garna = 25; 
+let game_win = false;
+function generateQuestion(arr) {
 
-let randomIdx;
-let usedIndices = [];
+	let randomInt;
+	do {
+		randomInt = getRandomIdx(arr);
+	} while (usedIndices.includes(randomInt));
 
-function generateQuestion(arr){
-    do{
-        randomIdx = getRandomIdx(hardQuizData);
-    }while(usedIndices.includes(randomIdx))
-    usedIndices.push(randomIdx);
-
-    return arr[randomIdx];
+	usedIndices.push(randomInt);
+	return arr[randomInt];
 }
 
-function show_elements(ques){
 
-    document.getElementById("question_id").innerText = ques.question;
+let q = generateQuestion(hardQuizData);
+show_element(q);
 
-    document.getElementById("btn1").innerText = ques.options[0];
-    document.getElementById("btn2").innerText = ques.options[1];
-    document.getElementById("btn3").innerText = ques.options[2];
-    document.getElementById("btn4").innerText = ques.options[3];
+function show_element(q){
+
+    document.getElementById("question_id").innerText = q.question;
+    document.getElementById("btn1").innerText = q.options[0];
+    document.getElementById("btn2").innerText = q.options[1];
+    document.getElementById("btn3").innerText = q.options[2];
+    document.getElementById("btn4").innerText = q.options[3];
+	
 }
+function setCountDown(){
+  setInterval(()=>{
+    timer -= 4;
+    timer_show_garna--;
+    document.getElementById("timer-countdown").style.width = `${timer}%`
+    document.getElementById("timer").innerText = `${timer_show_garna}s`
+  },1000)
+}
+setCountDown()
 
-let currentQues = generateQuestion(hardQuizData);
-show_elements(currentQues);
-document.getElementById("id3").style.display = 'none';
 
-document.getElementById("div_id").addEventListener('click', (e)=>{
-    /**@type {HTMLButtonElement} */
-    let btn = e.target
+
+
+
+document.getElementById("div_id").addEventListener("click", (e) => {
+    /**@type {HTMLButtonElement}*/
+    let btn = e.target;
+
     if(["btn1", "btn2", "btn3", "btn4"].includes(btn.id)) {
-        turn++;
+		/**@type {HTMLObjectElement} */
+		
+      	if(btn.innerText === q.answer){
+			btn.style.background =  "#DCFCE7";
+			btn.style.borderColor = "#4ADE80";
+			point++;
+		}else{
+			btn.style.background = "#FEE2E2";
+			btn.style.borderColor = "#F87171";
+		}
+    turn += 20;
+    question_counter++;
+    document.getElementById("progress-bar").style.width = `${turn}%`;
+    document.getElementById("progress-percent").innerText = `${turn}% Complete`;
+    document.getElementById("question-counter").innerText = `Question ${question_counter}/5`;
 
-        if(btn.innerText === currentQues.answer){
-            point++
+    
+    win_loss()
 
-            btn.style.background = "#708238";
-            document.querySelector("span").innerText = point;
-
-        }else{
-            btn.style.background = "#A84448";
-        }
-        document.getElementById("turnSpan").innerText=turn;
-
-        setTimeout(()=>{
-            if(turn === 10){
-                document.getElementById("score2").innerText = `Your Score Is ${point}`
-                point = 0;
-                turn = 0;
-                usedIndices = [];
-                document.getElementById('id3').style.display = "flex";
-                let play_again_div = document.getElementById("again2")
-                play_again_div.addEventListener('click', (e)=>{
-                  window.location = "/index.html";
-                })
-            }else{
-
-                currentQues = generateQuestion(hardQuizData);
-                show_elements(currentQues);
-                resetColor();
-            }            
-        },500);
 
     }
 })
 
-function resetColor(){
-	document.getElementById("btn1").style.background = '#D4C9BE';
-	document.getElementById("btn2").style.background = '#D4C9BE';
-	document.getElementById("btn3").style.background = '#D4C9BE';
-	document.getElementById("btn4").style.background = '#D4C9BE';
+function win_loss(){
+  setTimeout(()=>{
+	console.log("we are inside set Time out")
+
+		if(point === 5){
+			game_win = true;
+			console.log("point 5")
+			localSet()
+      reset_game()
+			return;
+		}
+		if(timer_show_garna < 0){
+			game_win = false;
+			localSet()
+			reset_game()
+			console.log("time sako")
+			return
+		}if(turn === 100){
+			localSet()
+			reset_game()
+			console.log('haryo 5 turn sako')
+			return
+	
+		}
+		console.log("q mathi")
+		q = generateQuestion(hardQuizData);
+		show_element(q);
+		reset_color()
+
+	
+  	
+	},1000)
+}
+
+function localSet(){
+	localStorage.setItem("points", point);
+}
+
+
+function reset_game(){
+	usedIndices = [];
+	point = 0;
+	turn = 0;
+	question_counter = 0;
+	timer = 100;
+	timer_show_garna = 25; 
+	game_win = false;
+  window.location.href = "./../htmls/result.html"
+}
+
+
+
+function reset_color() {
+	document.getElementById("btn1").style.background = "#ffffff";
+  document.getElementById("btn1").style.borderColor = "#D1D5DB";
+
+	document.getElementById("btn2").style.background = "#ffffff";
+  document.getElementById("btn2").style.borderColor = "#D1D5DB";
+
+	document.getElementById("btn3").style.background = "#ffffff";
+  document.getElementById("btn3").style.borderColor = "#D1D5DB";
+
+	document.getElementById("btn4").style.background = "#ffffff";
+  document.getElementById("btn4").style.borderColor = "#D1D5DB";
+
 }

@@ -156,95 +156,151 @@ const quizData = [
 	}
 ];
 
-let point = 0;
-
-function getRandomIdx(object) {
-	let randomInt = Math.floor(Math.random() * object.length);
-	return randomInt;
+function getRandomIdx(arr){
+    let size = arr.length;
+    let randomIdx = Math.floor(Math.random() * size);
+    return randomIdx;
 }
-
-let prevIdx = -1;
 let usedIndices = []
-turn = 1
-document.getElementById("id1").style.display = 'none';
-
-
-function generateQuestion(obj) {
+let point = 0;
+let turn = 0;
+let question_counter = 0;
+let timer = 100;
+let timer_show_garna = 25; 
+let game_win = false;
+function generateQuestion(arr) {
 
 	let randomInt;
 	do {
-		randomInt = getRandomIdx(obj);
+		randomInt = getRandomIdx(arr);
 	} while (usedIndices.includes(randomInt));
 
 	usedIndices.push(randomInt);
-	return obj[randomInt];
-}
-let currentQuestion = generateQuestion(quizData);
-generate_elements(currentQuestion);
-
-function generate_elements() {
-	currentQuestion = generateQuestion(quizData);
-
-	document.getElementById("question_id").innerText = currentQuestion.question;
-
-	document.getElementById("btn1").innerText = currentQuestion.options[0];
-	document.getElementById("btn2").innerText = currentQuestion.options[1];
-	document.getElementById("btn3").innerText = currentQuestion.options[2];
-	document.getElementById("btn4").innerText = currentQuestion.options[3];
+	return arr[randomInt];
 }
 
-//why doesnt vsc show suggestion?
-//because it dosent know the type of the parameter so it cant suggest for which we use @type 
+
+let q = generateQuestion(quizData);
+show_element(q);
+
+function show_element(q){
+
+    document.getElementById("question_id").innerText = q.question;
+    document.getElementById("btn1").innerText = q.options[0];
+    document.getElementById("btn2").innerText = q.options[1];
+    document.getElementById("btn3").innerText = q.options[2];
+    document.getElementById("btn4").innerText = q.options[3];
+	
+}
+function setCountDown(){
+  setInterval(()=>{
+    timer -= 4;
+    timer_show_garna--;
+    document.getElementById("timer-countdown").style.width = `${timer}%`
+    document.getElementById("timer").innerText = `${timer_show_garna}s`
+  },1000)
+}
+setCountDown()
+
+
+
+
 
 document.getElementById("div_id").addEventListener("click", (e) => {
-	/**@type {HTMLButtonElement}*/
-	let btn_value = e.target;
+    /**@type {HTMLButtonElement}*/
+    let btn = e.target;
 
-	if(["btn1", "btn2", "btn3", "btn4"].includes(btn_value.id)) {
-		if (btn_value.innerText === currentQuestion.answer) {
-			btn_value.style.background = "#708238";
+    if(["btn1", "btn2", "btn3", "btn4"].includes(btn.id)) {
+		/**@type {HTMLObjectElement} */
+		
+      	if(btn.innerText === q.answer){
+			btn.style.background =  "#DCFCE7";
+			btn.style.borderColor = "#4ADE80";
 			point++;
-		} else {
-			btn_value.style.background = "#A84448";
+		}else{
+			btn.style.background = "#FEE2E2";
+			btn.style.borderColor = "#F87171";
 		}
+    turn += 20;
+    question_counter++;
+    document.getElementById("progress-bar").style.width = `${turn}%`;
+    document.getElementById("progress-percent").innerText = `${turn}% Complete`;
+    document.getElementById("question-counter").innerText = `Question ${question_counter}/5`;
 
-		document.querySelector("span").innerText = point;
-		document.getElementById("turnSpan").innerText = turn;
+    
+    win_loss()
 
-		setTimeout(() => {
-			if (turn === 5) {
-				document.getElementById("score").innerText = `Your Score is ${point}`;
-				point = 0;
-				turn = 0;
-				usedIndices = [];
 
-				document.getElementById("id1").style.display = 'block';
+    }
+})
 
-				let play_again_div = document.getElementById("again");
-				play_again_div.addEventListener('click', (e)=>{
-					window.location = "/index.html";
-				})
+function win_loss(){
+  setTimeout(()=>{
+	console.log("we are inside set Time out")
 
-				
+		if(point === 5){
+			game_win = true;
+			console.log("point 5")
+			localSet()
+			reset_game()
+			return;
+		}
+		if(timer_show_garna < 0){
+			game_win = false;
+			localSet()
+			reset_game()
+			console.log("time sako")
+			return
+		}if(turn === 100){
+			localSet()
+			reset_game()
+			console.log('haryo 5 turn sako')
+			return
+	
+		}
+		console.log("q mathi")
+		q = generateQuestion(quizData);
+		show_element(q);
+		reset_color()
 
-			} else {
-				turn++;
-				generate_elements();
-			}
-			reset_color();
-		}, 700);
-	}
-});
+	
+  	
+	},1000)
+}
+
+function localSet(){
+	localStorage.setItem("points", point);
+	localStorage.setItem("percentage", turn);
+}
+
+
+function reset_game(){
+	usedIndices = [];
+	point = 0;
+	turn = 0;
+	question_counter = 0;
+	timer = 100;
+	timer_show_garna = 25; 
+	game_win = false;
+  	window.location.href = "./../htmls/result.html"
+}
 
 
 
 function reset_color() {
-	document.getElementById("btn1").style.background = '#D4C9BE';
-	document.getElementById("btn2").style.background = '#D4C9BE';
-	document.getElementById("btn3").style.background = '#D4C9BE';
-	document.getElementById("btn4").style.background = '#D4C9BE';
-}
+	document.getElementById("btn1").style.background = "#ffffff";
+  document.getElementById("btn1").style.borderColor = "#D1D5DB";
 
+	document.getElementById("btn2").style.background = "#ffffff";
+  document.getElementById("btn2").style.borderColor = "#D1D5DB";
+
+	document.getElementById("btn3").style.background = "#ffffff";
+  document.getElementById("btn3").style.borderColor = "#D1D5DB";
+
+	document.getElementById("btn4").style.background = "#ffffff";
+  document.getElementById("btn4").style.borderColor = "#D1D5DB";
+
+}
 
 
 
