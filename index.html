@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="h-screen w-screen">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/output.css" rel="stylesheet">
+    <script src="src/scripts/start.js" defer></script>
+    
+    <title>Quiz Master</title>
+</head>
+<body class="bg-gradient-to-r from-indigo-900 via-purple-900 to-pink-900 w-full h-full">
+
+    <div class="min-h-screen w-full flex items-center justify-center p-4">
+        <div class="w-full max-w-[95%] sm:max-w-[85%] md:max-w-[75%] lg:max-w-[65%] xl:max-w-[55%] min-h-[80vh] bg-white rounded-[30px] sm:rounded-[40px] md:rounded-[50px] p-6 sm:p-8 md:p-10 flex flex-col">
+            
+            <!-- Logo and Title Section -->
+            <div class="flex flex-col items-center justify-center space-y-6 sm:space-y-8 md:space-y-10">
+                <!-- Logo Circle -->
+                <div class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full flex items-center justify-center bg-gradient-to-r from-purple-500 to-pink-500 transform transition-all duration-300 hover:scale-105">
+                    <img src="../../asset/icons8-brain-24 (2).png" class="w-10 sm:w-12 md:w-14 lg:w-16">
+                </div>      
+                
+                <!-- Title -->
+                <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 text-4xl sm:text-5xl md:text-6xl tracking-wider font-extrabold text-center">Quiz Master</h1>
+                
+                <!-- Subtitle -->
+                <h2 class="text-gray-600 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-center">Choose your challenge here</h2>          
+            </div>
+
+            <!-- Buttons Container -->
+            <div class="flex flex-col items-center justify-center space-y-4 sm:space-y-6 md:space-y-8 mt-10 sm:mt-12 md:mt-16 lg:mt-20">
+                <!-- Easy Button -->
+                <button onclick="window.location.href = 'src/htmls/easy.html'" class="
+                w-full max-w-[90%] h-16 sm:h-20 md:h-24
+                bg-gradient-to-r from-green-400 to-emerald-600 
+                rounded-2xl sm:rounded-3xl
+                flex items-center justify-between px-4 sm:px-6 md:px-8
+                transform transition duration-300 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:cursor-pointer
+                group
+                ">
+                    <div class="flex items-center space-x-3 sm:space-x-4 md:space-x-6">
+                        <img src="../../asset/icons8-baby-bottle-32 (1).png" class="w-8 sm:w-10 md:w-12 transition-transform group-hover:scale-110">
+                        <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Easy</span>
+                    </div>
+                    <span class="bg-emerald-500 px-4 py-2 rounded-xl text-sm sm:text-base md:text-lg font-bold text-white">5 Questions</span>
+                </button>
+
+                <!-- Medium Button -->
+                <button onclick="window.location.href = 'src/htmls/medium.html'" class="
+                w-full max-w-[90%] h-16 sm:h-20 md:h-24
+                bg-gradient-to-r from-yellow-400 to-orange-500
+                rounded-2xl sm:rounded-3xl
+                flex items-center justify-between px-4 sm:px-6 md:px-8
+                transform transition duration-300 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:cursor-pointer
+                group
+                ">
+                    <div class="flex items-center space-x-3 sm:space-x-4 md:space-x-6">
+                        <img src="../../asset/icons8-electricity-24.png" class="w-8 sm:w-10 md:w-12 transition-transform group-hover:scale-110">
+                        <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Medium</span>
+                    </div>
+                    <span class="bg-orange-300 px-4 py-2 rounded-xl text-sm sm:text-base md:text-lg font-bold text-white">5 Questions</span>
+                </button>
+
+                <!-- Hard Button -->
+                <button onclick="window.location.href = 'src/htmls/hard.html'" class="
+                w-full max-w-[90%] h-16 sm:h-20 md:h-24
+                bg-gradient-to-r from-red-400 to-pink-600
+                rounded-2xl sm:rounded-3xl
+                flex items-center justify-between px-4 sm:px-6 md:px-8
+                transform transition duration-300 hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:cursor-pointer
+                group
+                ">
+                    <div class="flex items-center space-x-3 sm:space-x-4 md:space-x-6">
+                        <img src="../../asset/icons8-brain-32.png" class="w-8 sm:w-10 md:w-12 transition-transform group-hover:scale-110">
+                        <span class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Hard</span>
+                    </div>
+                    <span class="bg-pink-400 px-4 py-2 rounded-xl text-sm sm:text-base md:text-lg font-bold text-white">5 Questions</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
