@@ -20,8 +20,7 @@ function Ui_Update(){
 
 let btn = document.getElementById("play_again");
 btn.addEventListener("click", ()=>{
-    console.log('adfhaldksfh')
-    window.location.href = "./../htmls/difficulty.html"
+    window.location.href = "../../index.html";
 })
 
 window.addEventListener('load', ()=>{
