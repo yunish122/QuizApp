@@ -198,6 +198,17 @@ function setCountDown(){
     timer_show_garna--;
     document.getElementById("timer-countdown").style.width = `${timer}%`
     document.getElementById("timer").innerText = `${timer_show_garna}s`
+	if(timer_show_garna <= 3){
+		document.getElementById("timer").style.color = "red"
+
+	}
+	if(timer_show_garna < 0){
+		game_win = false;
+		localSet()
+		reset_game()
+		console.log("time sako")
+		return
+	}
   },1000)
 }
 setCountDown()
@@ -245,13 +256,8 @@ function win_loss(){
 			reset_game()
 			return;
 		}
-		if(timer_show_garna < 0){
-			game_win = false;
-			localSet()
-			reset_game()
-			console.log("time sako")
-			return
-		}if(turn === 100){
+	
+		if(turn === 100){
 			localSet()
 			reset_game()
 			console.log('haryo 5 turn sako')
