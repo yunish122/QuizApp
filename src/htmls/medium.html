@@ -13,6 +13,34 @@
     * {
       font-family: "Rowdies", sans-serif;
     }
+    .correct::after{
+        content: '✓';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        margin-left: 12px;
+    }
+    .wrong::after{
+        content: '✗';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        margin-left: 12px;
+    }
+    @keyframes button_click {
+      0%{
+        transform: scale(1);
+      }50%{
+        transform: scale(1.03);
+      }100%{
+        transform: scale(1);
+      }
+    }
+    .btn_animation{
+        animation: button_click 0.85s ease-in-out;
+    }
   </style>
 </head>
 
@@ -43,7 +71,7 @@
                 </div>
                 <div class="mask-auto items-center flex ml-5 xl:gap-4 sm:gap-2 md:gap-2 lg:gap-3 gap-1">
                     <img src="../../asset/icons8-star-24.png" alt="star">
-                    <p id="question-counter" class="text-[0.9rem] sm:text-[1rem] md:text-[1.2rem] xl:text-3xl">Question 0/5</p>
+                    <p id="question-counter-1" class="text-[0.9rem] sm:text-[1rem] md:text-[1.2rem] xl:text-3xl">Question 1 of 5</p>
                 </div>
             </div>      
             
@@ -80,7 +108,7 @@
                 text-[1.4rem] h-25 mt-2
                 ">This is the question</h1>
                 
-                <button id="btn1" class="option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
+                <button id="btn1" class="relative option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
                 sm:text-xl sm:pl-4
                 sm:h-[11%]
                 md:text-md
@@ -92,10 +120,9 @@
                 
                 
                 ">
-                    <span class="w-[50px]">A</span>
                 </button>
                 
-                <button id="btn2" class="option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
+                <button id="btn2" class="relative option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
                 sm:text-xl sm:pl-4
                 sm:h-[11%]
                 md:text-md
@@ -104,31 +131,31 @@
                 
                 xl:text-4xl xl:h-[10%] 
                 hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
-                ">Second</button>
+                "></button>
                 
-                <button id="btn3" class="option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
+                <button id="btn3" class="relative option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
                 sm:text-xl sm:pl-4
                 sm:h-[11%]
                 md:text-md
                 md:h-[11%]
                 
-                h-[10%] text-[1.2rem] pl-3
-
-                xl:text-4xl xl:h-[10%] 
-                hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
-                ">Third</button>
-                
-                <button id="btn4" class="option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
-                sm:text-xl sm:pl-4
-                sm:h-[11%]
-                md:text-md
-                md:h-[11%]
                 h-[10%] text-[1.2rem] pl-3
 
+                xl:text-4xl xl:h-[10%] 
+                hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
+                "></button>
+                
+                <button id="btn4" class="relative option-btn bg-white border-gray-300 border-3 w-[100%] rounded-3xl text-start
+                sm:text-xl sm:pl-4
+                sm:h-[11%]
+                md:text-md
+                md:h-[11%]
+                h-[10%] text-[1.2rem] pl-3
+
                 
                 xl:text-4xl xl:h-[10%] 
                 hover:cursor-pointer transform transition hover:scale-[1.02] hover:shadow-[0_10px_20px_rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.1)] hover:border-blue-300
-                ">Fourth</button>
+                "></button>
 
 
                 <div class="w-full sm:h-1 lg:h-2 xl:h-2 h-1 mt-5 relative bg-gray-400 rounded-4xl

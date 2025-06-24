@@ -416,32 +416,54 @@ setCountDown()
 document.getElementById("div_id").addEventListener("click", (e) => {
     /**@type {HTMLButtonElement}*/
     let btn = e.target;
-
+  
     if(["btn1", "btn2", "btn3", "btn4"].includes(btn.id)) {
 		/**@type {HTMLObjectElement} */
-		
-      	if(btn.innerText === q.answer){
-			btn.style.background =  "#DCFCE7";
-			btn.style.borderColor = "#4ADE80";
-			point++;
-		}else{
-			btn.style.background = "#FEE2E2";
-			btn.style.borderColor = "#F87171";
-		}
-    turn += 20;
-    question_counter++;
-    document.getElementById("progress-bar").style.width = `${turn}%`;
-    document.getElementById("progress-percent").innerText = `${turn}% Complete`;
-    document.getElementById("question-counter").innerText = `Question ${question_counter}/5`;
+      let btns = document.querySelectorAll('#btn1, #btn2, #btn3, #btn4');
+      let correctAns = Array.from(btns).find(x => x.innerText === q.answer);
+      let wrongAns = Array.from(btns).filter(x => x.innerText !== q.answer);
+      btn.classList.add("btn_animation");
+      correctAns.classList.add("btn_animation");
+      btn.addEventListener('animationend',()=>{
+        btn.classList.remove("btn_animation");
+      })
+      if(btn.innerText === q.answer){
+        btn.style.background =  "#DCFCE7";
+        btn.style.borderColor = "#4ADE80";
+        btn.classList.add("btn_animation");
+        btn.classList.add('correct')
+        wrongAns.forEach(element => {
+          element.style.backgroundColor = "#f3f4f6";
+          element.style.borderColor = "e5e7eb";
+          element.style.color = "6b7280"          
+        });
+        point++;
+      }else{
+        btn.style.background = "#FEE2E2";
+        btn.style.borderColor = "#F87171";
+        btn.classList.add('wrong');
+        correctAns.classList.add("btn_animation");
+        correctAns.style.background =  "#DCFCE7";
+        correctAns.style.borderColor = "#4ADE80";
+        correctAns.classList.add('correct');
+      }
+      turn += 20;
+      question_counter++;
+      document.getElementById("progress-bar").style.width = `${turn}%`;
+      document.getElementById("progress-percent").innerText = `${turn}% Complete`;
+      document.getElementById("question-counter").innerText = `Question ${question_counter}/5`;
+      document.getElementById("question-counter-1").innerText = `Question ${question_counter}/5`
 
-    
-    win_loss()
+      setTimeout(()=>{
+        win_loss(btn,correctAns)
+
+      },300)
 
 
     }
 })
 
-function win_loss(){
+function win_loss(btn,correctAns){
   setTimeout(()=>{
 	console.log("we are inside set Time out")
 
@@ -459,8 +481,13 @@ function win_loss(){
 			return
 	
 		}
-		console.log("q mathi")
-		q = generateQuestion(hardQuizData);
+
+    btn.classList.remove('correct');
+    btn.classList.remove('wrong');
+    correctAns.classList.remove('correct')
+
+
+    q = generateQuestion(hardQuizData);
 		show_element(q);
 		reset_color()
 
