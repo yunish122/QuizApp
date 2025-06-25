@@ -277,7 +277,9 @@ document.getElementById("div_id").addEventListener("click", (e) => {
 
     }
 })
-
+document.getElementById('signUp').addEventListener('click',()=>{
+	window.location.href = "../../src/htmls/signup.html";
+})
 function win_loss(btn, correctAns){
   setTimeout(()=>{
 	console.log("we are inside set Time out")

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="h-screen w-screen">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanchenjunga:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: "Inter", sans-serif;
+        }
+        @keyframes float {
+            0%,100%{
+                transform: translateY(0);
+            }50%{
+                transform: translateY(-10px);
+            }
+        }
+        .floats{
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="relative h-full w-full bg-[linear-gradient(135deg,_#667eea_0%,_#764ba2_100%)]">
+    <div class="floats w-[120px] h-[120px] rounded-[50%] bg-white/10 absolute top-20 left-30"></div>
+    <div class="floats w-[60px] h-[60px] rounded-[50%] bg-white/10 absolute bottom-20 left-80"></div>
+    <div class="floats w-[90px] h-[90px] rounded-[50%] bg-white/10 absolute top-60 right-30"></div>
+
+    
+    <div class="flex justify-center items-center h-full w-full">
+        <div class="bg-[#FFFFFF1A] w-[70%] p-10 rounded-3xl flex justify-start items-center flex-col gap-4
+        md:w-[55%] lg:w-[45%] xl:w-[40%] 2xl:w-[35%]
+        ">
+            <div class="flex flex-col items-center justify-start gap-2">
+                <div class="h-[60px] w-[60px] bg-[#FFFFFF33] flex items-center justify-center rounded-[50%]"><img class="m-0 p-0 w-[25px] h-[25px]" src="../../asset/icons8-lock-70.png" alt=""></div>
+                <h1 class="text-white/90 font-bold text-2xl">Welcome Back</h1>
+                <h2 class="text-white/70 tracking-tight">Sign in to continue to Quiz Master</h2>
+                    
+            </div>
+            <!-- this part contains mail and password -->
+            <div class="flex flex-col items-center w-full justify-center gap-5 mt-10">
+                <div class="flex flex-col gap-2 w-full">
+                    <lable class="text-white/70 tracking-wider font-bold text-sm">Email Address</lable>
+                    <input class="block border-[1px] h-[50px] rounded-2xl pl-3 bg-white/10  placeholder-white/65 border-white/20 w-[100%] focus:outline-0 text-white" type="email" placeholder="@  Enter your email">
+                </div>
+                <div class="flex flex-col gap-2 w-full">
+                    <lable class="text-white/70 tracking-wider font-bold text-sm">Password</lable>
+                    <input class="block border-[1px] h-[50px] rounded-2xl pl-3 bg-white/10  placeholder-white/65 mb-7 border-white/20 w-[100%] focus:outline-0 text-white" type="email" placeholder="Enter your Password">
+                </div>      
+                <button id="showBtn" class="text-black/70 bg-white/80 w-[40%] mb-10 border-1 border-white/20 h-[40px] font-bold rounded-2xl hover:cursor-pointer hover:bg-white/80 transform transition hover:-translate-y-0.5" >Login?</button>
+    
+      
+            </div>
+  
+
+        </div>
+        
+        </div>
+
+    </div>
+    
+</body>
+</html>
